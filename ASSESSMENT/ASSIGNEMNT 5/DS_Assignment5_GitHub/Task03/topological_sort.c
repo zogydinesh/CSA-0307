@@ -1,0 +1,3 @@
+#include <stdio.h>
+#define V 6
+int main(void){const char *name[V]={"Lease","Power","Racks","Network","Staff","Launch"};int g[V][V]={{0,1,1,0,1,0},{0,0,0,1,0,0},{0,0,0,1,0,0},{0,0,0,0,0,1},{0,0,0,0,0,1},{0,0,0,0,0,0}};int in[V]={0},q[V],h=0,t=0,done=0;for(int u=0;u<V;u++)for(int v=0;v<V;v++)in[v]+=g[u][v];for(int v=0;v<V;v++)if(!in[v])q[t++]=v;printf("Topological order: ");while(h<t){int u=q[h++];printf("%s ",name[u]);done++;for(int v=0;v<V;v++)if(g[u][v]&&--in[v]==0)q[t++]=v;}puts("");puts(done==V?"valid schedule":"cycle detected");return 0;}

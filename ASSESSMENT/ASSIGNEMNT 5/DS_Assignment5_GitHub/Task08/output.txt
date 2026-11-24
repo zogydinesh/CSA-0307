@@ -1,0 +1,5 @@
+Array Dijkstra distance 0->7 = 12
+Floyd-Warshall distance 0->7 = 12
+Heap Dijkstra distance 0->7 = 12
+A* grid shortest steps = 10
+A* expanded vertices (excluding goal) = 21

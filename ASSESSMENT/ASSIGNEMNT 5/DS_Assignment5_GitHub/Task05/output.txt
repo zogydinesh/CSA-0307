@@ -1,0 +1,12 @@
+Prim selected edges:
+0-1 (2)
+1-2 (3)
+0-3 (6)
+1-4 (5)
+Prim total cost = 16 lakh
+Kruskal selected edges:
+0-1 (2)
+1-2 (3)
+1-4 (5)
+0-3 (6)
+Kruskal total cost = 16 lakh

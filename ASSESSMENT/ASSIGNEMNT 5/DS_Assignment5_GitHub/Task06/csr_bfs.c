@@ -1,0 +1,3 @@
+#include <stdio.h>
+#define V 7
+int main(void){const char *name[V]={"Airport","Guindy","Saidapet","Central","Egmore","Vadapalani","Koyambedu"};int start[V+1]={0,1,4,6,8,9,11,12};int adj[]={1,0,2,5,1,3,2,4,3,1,6,5};int q[V],seen[V]={0},parent[V],h=0,t=0,order[V],n=0;for(int i=0;i<V;i++)parent[i]=-1;seen[0]=1;q[t++]=0;while(h<t){int u=q[h++];order[n++]=u;for(int k=start[u];k<start[u+1];k++){int v=adj[k];if(!seen[v])seen[v]=1,parent[v]=u,q[t++]=v;}}printf("BFS order: ");for(int i=0;i<n;i++)printf("%s ",name[order[i]]);int path[V],len=0;for(int v=6;v!=-1;v=parent[v])path[len++]=v;printf("\nKoyambedu is %d stops away via: ",len-1);for(int i=len-1;i>=0;i--)printf("%s%s",name[path[i]],i?" -> ":"\n");return 0;}

@@ -1,0 +1,6 @@
+#include <stdio.h>
+#include <limits.h>
+#define V 6
+#define INF (LLONG_MAX/4)
+int main(void){int w[V][V]={{0,7,9,0,0,14},{7,0,10,15,0,0},{9,10,0,11,0,2},{0,15,11,0,6,0},{0,0,0,6,0,9},{14,0,2,0,9,0}};long long d[V];int p[V],used[V]={0};for(int i=0;i<V;i++)d[i]=INF,p[i]=-1;d[0]=0;for(int k=0;k<V;k++){int u=-1;for(int i=0;i<V;i++)if(!used[i]&&d[i]!=INF&&(u<0||d[i]<d[u]))u=i;if(u<0)break;used[u]=1;for(int v=0;v<V;v++)if(w[u][v]>0&&!used[v]&&d[u]<=INF-w[u][v]&&d[u]+w[u][v]<d[v])d[v]=d[u]+w[u][v],p[v]=u;}printf("Dijkstra distances from 0: ");for(int i=0;i<V;i++)printf("%lld ",d[i]);int path[V],n=0;for(int v=4;v!=-1;v=p[v])path[n++]=v;printf("\nPath to 4: ");while(n)printf("%d ",path[--n]);puts("");
+ int f[4][4]={{0,5,999,10},{999,0,3,999},{999,999,0,1},{999,999,999,0}};for(int k=0;k<4;k++)for(int i=0;i<4;i++)for(int j=0;j<4;j++)if(f[i][k]!=999&&f[k][j]!=999&&f[i][k]+f[k][j]<f[i][j])f[i][j]=f[i][k]+f[k][j];puts("Floyd-Warshall matrix:");for(int i=0;i<4;i++){for(int j=0;j<4;j++)printf("%4d",f[i][j]);puts("");}return 0;}

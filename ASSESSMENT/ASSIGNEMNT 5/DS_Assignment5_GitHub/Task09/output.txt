@@ -1,0 +1,9 @@
+MST extension example: 5 hubs, selected links = 4
+Selected: 0-1 (2), 1-2 (3), 0-3 (6), 1-4 (5)
+Total cable cost = Rs. 16 lakh
+If a selected link fails, remove it and recompute MST using remaining candidate edges.
+Scale estimate for 250,000 junctions:
+Adjacency matrix entries = 62500000000
+Matrix storage at 4 bytes/entry = 250.0 GB
+Decision: use adjacency list / CSR and heap Dijkstra for sparse road graphs.
+Use BFS for metro stops, Kahn for dependencies, Prim/Kruskal for fibre, A* for grid navigation.

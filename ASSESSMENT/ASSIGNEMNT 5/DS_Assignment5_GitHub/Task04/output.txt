@@ -1,0 +1,7 @@
+Dijkstra distances from 0: 0 7 9 20 20 11 
+Path to 4: 0 2 5 4 
+Floyd-Warshall matrix:
+   0   5   8   9
+ 999   0   3   4
+ 999 999   0   1
+ 999 999 999   0

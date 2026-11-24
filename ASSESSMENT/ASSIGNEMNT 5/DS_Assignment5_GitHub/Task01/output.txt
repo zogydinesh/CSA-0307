@@ -1,0 +1,10 @@
+Undirected road graph: 5 junctions, 5 road segments
+Adjacency matrix:
+0 1 1 0 0 
+1 0 0 1 0 
+1 0 0 1 0 
+0 1 1 0 1 
+0 0 0 1 0 
+
+Vertices = 5, Edges = 5
+Representation decision: adjacency list / CSR for a large sparse road network.

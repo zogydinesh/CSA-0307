@@ -1,0 +1,7 @@
+Case 1: disconnected graph
+Destination 4: unreachable
+Case 2: negative edge example (Bellman-Ford)
+Shortest cost from S to T = -3
+Use Bellman-Ford; Dijkstra requires non-negative edges.
+Case 3: overflow protection
+Guarded addition: safe

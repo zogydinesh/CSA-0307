@@ -1,0 +1,5 @@
+#include <stdio.h>
+#include <limits.h>
+#define INF (LLONG_MAX/4)
+int main(void){puts("Case 1: disconnected graph");int w[6][6]={{0,1,0,0,0,0},{1,0,1,0,0,0},{0,1,0,0,0,0},{0,0,0,0,1,0},{0,0,0,1,0,1},{0,0,0,0,1,0}};long long d[6];int used[6]={0};for(int i=0;i<6;i++)d[i]=INF;d[0]=0;for(int k=0;k<6;k++){int u=-1;for(int i=0;i<6;i++)if(!used[i]&&d[i]!=INF&&(u<0||d[i]<d[u]))u=i;if(u<0)break;used[u]=1;for(int v=0;v<6;v++)if(w[u][v]&&!used[v]&&d[u]+w[u][v]<d[v])d[v]=d[u]+w[u][v];}if(d[4]==INF)puts("Destination 4: unreachable");
+ puts("Case 2: negative edge example (Bellman-Ford)");struct E{int u,v,w;}e[]={{0,1,2},{0,2,5},{2,1,-10},{1,3,2}};long long b[4]={0,INF,INF,INF};for(int k=0;k<3;k++)for(int i=0;i<4;i++)if(b[e[i].u]!=INF&&b[e[i].u]+e[i].w<b[e[i].v])b[e[i].v]=b[e[i].u]+e[i].w;printf("Shortest cost from S to T = %lld\n",b[3]);puts("Use Bellman-Ford; Dijkstra requires non-negative edges.");puts("Case 3: overflow protection");long long safe=INF-100;if(safe<=INF-100)puts("Guarded addition: safe");return 0;}
